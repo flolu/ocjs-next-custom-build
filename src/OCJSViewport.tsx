@@ -3,6 +3,9 @@ import '@google/model-viewer'
 import initOpenCascade, {TopoDS_Shape} from 'opencascade.js'
 import {useEffect, useState} from 'react'
 
+import opencascade from '../customBuild.examples.js'
+// @ts-ignore
+import opencascadeWasm from '../customBuild.examples.wasm'
 import shapeToUrl from './shapeToUrl'
 
 declare global {
@@ -24,7 +27,9 @@ interface ModelViewerJSX {
 const OCJSViewport = () => {
   const [modelUrl, setModelUrl] = useState<string>()
   useEffect(() => {
-    initOpenCascade().then(oc => {
+    // @ts-ignore
+    initOpenCascade({mainJs: opencascade, mainWasm: opencascadeWasm}).then(oc => {
+      // initOpenCascade().then(oc => {
       const sphere = new oc.BRepPrimAPI_MakeSphere_1(1)
 
       // Take shape and subtract a translated and scaled sphere from it
