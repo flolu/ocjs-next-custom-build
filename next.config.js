@@ -24,6 +24,7 @@ const nextConfig = {
       },
     })
 
+    // https://stackoverflow.com/a/70995196/8586803
     // https://stackoverflow.com/q/66133602/8586803
     config.resolve.fallback = {
       ...config.resolve.fallback,

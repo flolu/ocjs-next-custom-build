@@ -43,6 +43,7 @@
   cp customBuild.examples.wasm ./node_modules/opencascade.js/dist/opencascade.full.wasm
   ```
 - Change `initOpenCascade({mainJs: opencascade, mainWasm: opencascadeWasm})` to `initOpenCascade()` in [`src/OCJSViewport.tsx`](src/OCJSViewport.tsx)
+- `rm -rf .next`, clear next cache
 - `npm run dev`, start development server on http://localhost:3000
 - Works just fine!
 
