@@ -1,7 +1,11 @@
-import type { NextPage } from 'next'
+import type {NextPage} from 'next'
+import dynamic from 'next/dynamic'
 import Head from 'next/head'
 import Image from 'next/image'
+
 import styles from '../styles/Home.module.css'
+
+const OCJSViewport = dynamic(() => import('../src/OCJSViewport'), {ssr: false})
 
 const Home: NextPage = () => {
   return (
@@ -14,54 +18,54 @@ const Home: NextPage = () => {
 
       <main className={styles.main}>
         <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
+          Welcome to <a href="https://ocjs.org">OpenCascade.js!</a>
         </h1>
 
         <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.tsx</code>
+          Get started by editing <code className={styles.code}>src/OCJSViewport.tsx</code>
         </p>
 
         <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h2>Documentation &rarr;</h2>
-            <p>Find in-depth information about Next.js features and API.</p>
+          <a href="https://ocjs.org/reference-docs" className={styles.card}>
+            <h2>Reference Documentation &rarr;</h2>
+            <p>Find in-depth information about OpenCascade.js features and API.</p>
           </a>
 
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h2>Learn &rarr;</h2>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/canary/examples"
-            className={styles.card}
-          >
-            <h2>Examples &rarr;</h2>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h2>Deploy &rarr;</h2>
+          <a href="https://ocjs.org/docs/getting-started/hello-world" className={styles.card}>
+            <h2>Guides &rarr;</h2>
             <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
+              Get started and learn about some of the more advanced topics on our documentation
+              website!
             </p>
           </a>
+
+          <a href="https://ocjs.org/docs/examples/bottle" className={styles.card}>
+            <h2>Examples &rarr;</h2>
+            <p>Check out some of the interactive examples on our website.</p>
+          </a>
+
+          <a
+            href="https://github.com/donalffons/opencascade.js/discussions"
+            className={styles.card}
+          >
+            <h2>Discuss &rarr;</h2>
+            <p>Get in touch with the community and help us build awesome CAD tools.</p>
+          </a>
         </div>
+
+        <OCJSViewport />
       </main>
 
       <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+        <a href="https://ocjs.org/" target="_blank" rel="noopener noreferrer">
           Powered by{' '}
           <span className={styles.logo}>
-            <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
+            <Image
+              src="https://raw.githubusercontent.com/donalffons/opencascade.js/master/images/logo.svg"
+              alt="Ocjs Logo"
+              width={150}
+              height={50}
+            />
           </span>
         </a>
       </footer>
